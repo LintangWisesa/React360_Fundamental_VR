@@ -20,15 +20,14 @@ export default class react360_notes extends React.Component {
     return (
       <View style={styles.panel}>
         <Entity
-          source={{
-            // https://sketchfab.com
-            gltf2: asset('sphere/scene.gltf'),
-          }}
+          // https://sketchfab.com
+          // source={{gltf2: asset('sphere/scene.gltf'),}}
+          source={{obj: asset('ironman/ironman.obj'), mtl: asset('ironman/ironman.mtl')}}
           style={{transform:[
-            { translate: [0, 0, 0]},
-            { scaleX: 2 },
-            { scaleY: 2 },
-            { scaleZ: 2 },
+            { translate: [-10, -10, 0]},
+            { scaleX: 5 },
+            { scaleY: 5 },
+            { scaleZ: 5 },
             // { rotateX: rotated },
           ]}}
         />
