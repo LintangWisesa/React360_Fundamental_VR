@@ -1,37 +1,36 @@
+// insert on client.js: 3D image from asset!
+// r360.renderToLocation(
+//   r360.createRoot('Sphere'),
+//   r360.getDefaultLocation(),
+// );
+
 import React from 'react';
 import {
+  asset,
   AppRegistry,
   StyleSheet,
-  Text,
   View,
-  VrButton,
+  Image
 } from 'react-360';
+import Entity from 'Entity';
 
 export default class react360_notes extends React.Component {
   
-  state = {
-    data: 'data'
-  }
-
-  getApi = () => {
-    fetch('https://jsonplaceholder.typicode.com/todos/10')
-    .then(response => response.json())
-    .then(json => {
-      console.log(json)
-      this.setState({data: json.id + ' ' + json.title})
-    })
-  };
-
   render() {
     return (
       <View style={styles.panel}>
-        <VrButton
-          onClick={this.getApi}
-          style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            {this.state.data}
-          </Text>
-        </VrButton>
+        <Entity
+          // https://sketchfab.com
+          source={{gltf2: asset('sphere/scene.gltf'),}}
+          // source={{obj: asset('ironman/ironman.obj'), mtl: asset('ironman/ironman.mtl')}}
+          style={{transform:[
+            { translate: [-10, -10, 0]},
+            { scaleX: 2 },
+            { scaleY: 2 },
+            { scaleZ: 2 },
+            // { rotateX: rotated },
+          ]}}
+        />
       </View>
     );
   }
@@ -44,15 +43,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
+    flex: 1, flexDirection: 'row'
   },
   greetingBox: {
-    padding: 20,
-    backgroundColor: '#000000',
-    borderColor: '#639dda',
-    borderWidth: 2,
+    width: 400,
+    height: 100
   },
-  greeting: {
-    fontSize: 30,
+  greetingBox2: {
+    width: 300,
+    height: 300
   },
 });
 
