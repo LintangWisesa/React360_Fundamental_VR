@@ -25,7 +25,7 @@ function init(bundle, parent, options = {}) {
     Surface.SurfaceShape.Flat,
   );
   // .setAngle ( yaw(L/R), pitch(UP/DOWN), roll(rotate) )
-  flatSurface.setAngle(-Math.PI / 2, 0);  // left
+  flatSurface.setAngle(-Math.PI / 2, -0.5);  // left below
   // flatSurface.setAngle(Math.PI / 4, Math.PI / 4);  // 45° right, 45° up 
   // flatSurface.setAngle(0, -Math.PI / 6);  // low panel
   // flatSurface.setAngle(Math.PI / 4, Math.PI / 4, Math.PI / 4);
@@ -53,7 +53,7 @@ function init(bundle, parent, options = {}) {
   );
 
   // Load the initial environment
-  r360.compositor.setBackground(r360.getAssetURL('samsung4.jpeg'));
+  r360.compositor.setBackground(r360.getAssetURL('samsung5.jpeg'));
 }
 
 window.React360 = {init};
